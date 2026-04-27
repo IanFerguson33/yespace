@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yespace</title>
+    <link rel="stylesheet" href="styles.css?v=21" />
+  </head>
+  <body>
+    <div class="cupid" aria-hidden="true">
+      <svg viewBox="0 0 150 120" role="img">
+        <g class="cupid-float">
+          <path
+            class="wing wing-left"
+            d="M55 49C28 22 6 28 15 55c4 13 17 23 37 18-17 11-29 24-20 34 12 13 36-5 45-33z"
+          />
+          <path
+            class="wing wing-right"
+            d="M91 45c22-29 45-28 45-2 0 15-12 29-34 31 19 8 33 18 27 30-8 16-36 3-49-25z"
+          />
+          <path class="sash" d="M56 82c18 13 38 12 57-2" />
+          <circle class="body" cx="78" cy="66" r="24" />
+          <circle class="head" cx="76" cy="35" r="18" />
+          <path
+            class="curl"
+            d="M59 30c2-13 22-17 29-6 6-9 21-2 15 9-7-9-14-4-14 3-5-10-18-10-30-6z"
+          />
+          <path class="eye" d="M67 36c3 3 7 3 10 0" />
+          <path class="eye" d="M84 36c4 2 7 1 9-3" />
+          <path class="smirk" d="M72 45c8 6 17 4 22-3" />
+          <path class="arm" d="M59 63c-13 4-22 2-30-8" />
+          <path class="arm" d="M93 61c11-1 19-8 25-19" />
+          <path class="leg" d="M65 86c-6 8-12 10-19 7" />
+          <path class="leg" d="M90 87c7 7 14 8 20 3" />
+          <path class="bow" d="M120 28c20 24 19 48-2 69" />
+          <path class="bow-string" d="M120 28c-9 22-10 45-2 69" />
+          <path class="arrow" d="M105 59h34" />
+          <path class="arrow-head" d="M138 59l-10-6 3 6-3 6z" />
+          <path class="arrow-tail" d="M106 59l-8-6 2 6-2 6z" />
+        </g>
+      </svg>
+    </div>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Yespace navigation">
+        <div class="brand">
+          <div class="brand-mark">Y</div>
+          <div>
+            <h1>Yespace</h1>
+            <p>Where desires find their yes.</p>
+          </div>
+        </div>
+
+        <div class="profile-switcher" aria-label="Profile selector">
+          <button class="profile-tab active" data-profile="self">Me</button>
+          <button class="profile-tab" data-profile="partner">Connection</button>
+          <button class="profile-tab" data-view="compare">Compare</button>
+        </div>
+
+        <div class="connection-panel">
+          <label for="connectionNameInput">Saved connection</label>
+          <div class="connection-controls">
+            <div class="connection-picker">
+              <input
+                class="connection-name-input"
+                id="connectionNameInput"
+                type="text"
+                aria-label="Saved connection"
+                autocomplete="off"
+              />
+              <div class="connection-stepper" aria-label="Move through saved connections">
+                <button class="stepper-button" id="previousConnectionButton" aria-label="Previous connection">
+                  ▲
+                </button>
+                <button class="stepper-button" id="nextConnectionButton" aria-label="Next connection">
+                  ▼
+                </button>
+              </div>
+              <div class="connection-menu hidden" id="connectionMenu" aria-label="Saved connection list"></div>
+            </div>
+            <button class="secondary-button compact-button" id="addConnectionButton">New</button>
+            <button class="danger-button compact-button" id="deleteConnectionButton">Delete</button>
+          </div>
+        </div>
+
+        <nav class="category-list" id="categoryList" aria-label="Checklist categories"></nav>
+
+        <div class="privacy-panel">
+          <strong>Private by default</strong>
+          <p>Your answers stay in this browser unless you export them.</p>
+          <div class="privacy-actions">
+            <button class="secondary-button" id="exportButton">Export</button>
+            <button class="danger-button" id="resetButton">Reset</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <section class="topbar">
+          <div>
+            <p class="eyebrow" id="modeLabel">Private checklist</p>
+            <h2 id="viewTitle">Energetic</h2>
+          </div>
+          <div class="progress-card" aria-live="polite">
+            <span id="progressText">0 of 0 complete</span>
+            <div class="progress-track">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="intro-panel" id="introPanel">
+          <div>
+            <h3>Mark each activity in both directions.</h3>
+            <p>
+              Use Want, Willing, No Way, or Learn to separate desire, openness,
+              boundaries, and places that need more information.
+            </p>
+          </div>
+          <div class="category-actions">
+            <button class="primary-button previous-category-button">Go back</button>
+            <button class="primary-button next-category-button">Next category</button>
+          </div>
+        </section>
+
+        <section class="checklist-grid" id="checklistGrid" aria-label="Checklist items"></section>
+        <section class="bottom-actions" id="bottomActions">
+          <button class="primary-button previous-category-button">Go back</button>
+          <button class="primary-button next-category-button">Next category</button>
+        </section>
+        <section class="compare-view hidden" id="compareView" aria-label="Connection comparison"></section>
+      </main>
+    </div>
+
+    <script src="app.js?v=21"></script>
+  </body>
+</html>
